@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    cursor: none;
+}
+body{
+    background-color: #3204a3;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+}
+.heading{
+    font-size: 2em;
+    margin: 1em 0em;
+    text-align: center;
+}
+.score{
+    font-size: 1.3em;
+    margin: 1em 0;
+    text-align: center;
+}
+.holesCont{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    justify-items: center;
+}
+.hole{
+    position: relative;
+    height: 80px;
+    width:80px;
+    border-radius: 50%;
+    background-color: black;
+    overflow: hidden; 
+}
+.mole{
+    position: absolute;
+    z-index:1;
+    height: 60px;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: appear 0.3s linear;
+    pointer-events: none;
+}
+@keyframes appear{
+    from{
+        bottom: -60px;
+    }
+    to{
+        bottom: 0px;
+    }
+}
+
+.buttons{
+    margin-top: 3em;
+    text-align: center;
+}
+.buttons button{
+    padding: 15px 45px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-color: inherit;
+    border: 5px solid #fff;
+    color: #ffff;
+    font-weight: bolder;
+    outline: none;
+    
+}
+.buttons button:hover{
+    padding: 15px 45px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-color: inherit;
+    border: 5px solid black;
+    color: black;
+    font-weight: bolder;
+    outline: none;
+}
+button.stop{
+    display: none;
+}
+
+.cursor img{
+    position: absolute;
+    height: 125px;
+    z-index: 2;
+    transform: translateX(-10px, -40px);
+    pointer-events: none;
+}
+
+@keyframes hit {
+      from {
+          transform: rotate(0deg);
+      }
+      to {
+          transform: rotate(-30deg);
+      }
+}
